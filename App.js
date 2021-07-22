@@ -54,6 +54,7 @@ function MyDrawer() {
         <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
             <Drawer.Screen name="Feed" component={Feed} />
             <Drawer.Screen name="Notifications" component={Notifications} />
+            <Drawer.Screen name="Home" component={MyTab} />
         </Drawer.Navigator>
     );
 }
