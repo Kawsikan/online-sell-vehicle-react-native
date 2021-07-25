@@ -6,12 +6,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ListVehcile from './components/Home/ListVehcile';
 import ListBikes from './components/Home/ListBikes';
 import ListParts from "./components/Home/ListParts";
-import {
-    createDrawerNavigator,
-    DrawerContentScrollView,
-    DrawerItemList,
-    DrawerItem,
-} from '@react-navigation/drawer';
+import {createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem} from '@react-navigation/drawer';
+import TabBar from './components/TabBar/TabBar';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -71,12 +67,8 @@ const App = () => {
 
     return (
         <NavigationContainer>
+            <TabBar/>
             <MyDrawer />
-            {/* <Tab.Navigator>
-                <Tab.Screen name="Vehicle" component={ListVehcile} />
-                <Tab.Screen name="Bikes" component={ListBikes} />
-                <Tab.Screen name="Parts" component={ListParts} />
-            </Tab.Navigator> */}
         </NavigationContainer>
     )
 }
