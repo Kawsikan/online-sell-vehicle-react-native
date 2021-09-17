@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 
 function Feed({ navigation }) {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, marginTop: 8, marginLeft: 8 }}>
             {/* <Button title="Open drawer" onPress={() => navigation.openDrawer()} /> */}
             <TouchableOpacity
                 onPress={() => navigation.openDrawer()}
@@ -60,10 +60,11 @@ function CustomDrawerContent(props) {
 }
 function MyDrawer() {
     return (
-        <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
-            <Drawer.Screen name="Feed" component={Feed} />
-            <Drawer.Screen name="Notifications" component={Notifications} />
-            <Drawer.Screen name="Home" component={MyTab} />
+        // <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+        <Drawer.Navigator >
+            <Drawer.Screen name="Home" component={Feed} />
+            <Drawer.Screen name="My Account" component={Notifications} />
+            <Drawer.Screen name="Wishlist" component={MyTab} />
         </Drawer.Navigator>
     );
 }
@@ -80,7 +81,7 @@ const App = () => {
 
     return (
         <NavigationContainer>
-            <TabBar />
+            {/* <TabBar /> */}
             <MyDrawer />
         </NavigationContainer>
     )
