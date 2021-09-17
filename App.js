@@ -6,8 +6,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ListVehcile from './components/Home/ListVehcile';
 import ListBikes from './components/Home/ListBikes';
 import ListParts from "./components/Home/ListParts";
-import {createDrawerNavigator,DrawerContentScrollView,DrawerItemList,DrawerItem} from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import TabBar from './components/TabBar/TabBar';
+import menu from "./assets/icons/menu.png"
+import { Image, TouchableOpacity } from "react-native";
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -15,9 +17,20 @@ const Tab = createBottomTabNavigator();
 function Feed({ navigation }) {
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Feed Screen</Text>
-            <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-            <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+            {/* <Button title="Open drawer" onPress={() => navigation.openDrawer()} /> */}
+            <TouchableOpacity
+                onPress={() => navigation.openDrawer()}
+            >
+                <Image
+                    source={menu}
+                    resizeMode="contain"
+                    style={{
+                        width: 25,
+                        height: 25
+                    }}
+                />
+            </TouchableOpacity>
+            {/* <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
         </View>
     );
 }
@@ -67,7 +80,7 @@ const App = () => {
 
     return (
         <NavigationContainer>
-            <TabBar/>
+            <TabBar />
             <MyDrawer />
         </NavigationContainer>
     )
